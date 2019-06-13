@@ -11,28 +11,32 @@
               <p>{{item.task}}</p>
             </div>
         </div>
-        <div *ngIf="addToDoTask">
-          <input type="text" placeholder="title">
-          <input type="text" placeholder="task">
+        <div *ngIf="addToDoTask" class="form" >
+            <input type="text" class="title-box" [(ngModel)]="newTask.title"  placeholder="title">
+            <input type="text" class="task-box" [(ngModel)]="newTask.task" placeholder="task" >
+            <button  class="save-btn" (click)="saveItem('todo')">save</button>
+          </div>
+         <button  *ngIf="itemToDobutton" (click)="toggle('todo')">add item</button>
         </div>
-        <button (click)="addToDoTask=true;">add item</button>
-     </div> 
+      
      
   <!--Doing-->
   <div class="listbox">
-      <h1>Done</h1>
+      <h1>Doing</h1>
       <div  class="doing" cdkDropList #doingList="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[todoList,doneList]" (cdkDropListDropped)="drop($event)">
          <div class="boxes" *ngFor="let item of doing" cdkDrag>
              <h4>{{item.title}}</h4>
              <p>{{item.task}}</p>
          </div>
       </div>
-      <div *ngIf="addToDoTask">
-          <input type="text" placeholder="title">
-          <input type="text" placeholder="task">
-        </div>
-        <button (click)="addToDoTask=true;">add item</button>
+      <div *ngIf="addDoingTask" class="form">
+        <input type="text" class="title-box"[(ngModel)]="newTask.title"  placeholder="title">
+        <input type="text" class="task-box"[(ngModel)]="newTask.task" placeholder="task" >
+        <button (click)="saveItem('doing')">save</button>
+      </div>
+     <button *ngIf="itemDoingbutton" (click)="toggle('doing')">add item</button>
     </div>
+    
 
 
   <!--Done-->
@@ -44,14 +48,13 @@
               <p>{{item.task}}</p>
           </div>
        </div>
-       <div *ngIf="addToDoTask">
-          <input type="text" placeholder="title">
-          <input type="text" placeholder="task">
+       <div *ngIf="addDoneTask" class="form" >
+          <input type="text" class="title-box" [(ngModel)]="newTask.title"  placeholder="title">
+          <input type="text" class="task-box" [(ngModel)]="newTask.task" placeholder="task" >
           <button (click)="saveItem('done')">save</button>
         </div>
-       <button (click)="addToDoTask=true;">add item</button>
+       <button *ngIf="itemDonebutton" (click)="toggle('done')">add item</button>
       </div>
       
-  
   </div>
   

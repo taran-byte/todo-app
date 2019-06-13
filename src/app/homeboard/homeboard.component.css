@@ -1,12 +1,13 @@
 
 .main-container{
-   
+   background-image: url("C:\Users\testuser\Desktop\project\todo-app\src\app\homeboard\trello.jpg");
     margin:25px;
     padding:15px;
     justify-content: center;
     align-items: center;
     flex:0 0 33%;
     flex-direction: column;
+    height:100vh;
 }
 
 .todo{
@@ -65,6 +66,44 @@
     border-radius: 5px;
     box-shadow: 0 3px 5px grey;
     margin: 10px;
+  }
+
+
+  .title-box{
+    
+    width:91px;
+    min-height: 29px;
+    margin:10px;
+    padding:20px 10px;
+    border-radius: 25px;
+    text-align: center;
+  }
+   .form{
+     display:flex;
+     flex:0 0 33%;
+     width: inherit;
+     align-items: center;
+     height: 150px;
+   }
+  .task-box{
+     
+    width:153px;
+    min-height: 29px;
+    margin:10px;
+    padding:20px 10px 20px 10px;
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  .save-btn{
+
+    border-radius: 6px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    width:58px;
+    padding:2px 13px;
+
   }
 
   .cdk-drag-placeholder {
