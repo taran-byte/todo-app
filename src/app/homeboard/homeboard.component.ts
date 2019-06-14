@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CdkDragDrop,moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
-import { NgForm } from "@angular/forms";
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-homeboard',
@@ -8,6 +8,10 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./homeboard.component.css']
 })
 export class HomeboardComponent{
+   title:any[];
+  constructor(db:AngularFireDatabase){
+    db.list('/title').valueChanges().subscribe(title =>{this.title=title;console.log(this.title);});
+  }
   itemToDobutton:boolean=true;
   addToDoTask: boolean = false;
   

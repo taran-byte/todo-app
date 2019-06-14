@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { HomeboardComponent } from './homeboard/homeboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule }from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import{ environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     DragDropModule,
-    FormsModule
-    
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase,'todo-app'),
+    AngularFireDatabaseModule
+      
   ],
   providers: [],
   bootstrap: [AppComponent]
